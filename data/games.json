@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "Палео",
+        "categories": [
+            "Кооперативная",
+            "Приключенческая"
+        ],
+        "min_players": 2,
+        "max_players": 4,
+        "ratings": [5, 4]
+    },
+    {
+        "id": 2,
+        "name": "Пиксель Тактикс",
+        "categories": [
+            "Стратегическая",
+            "Карточная",
+            "Дуэльная"
+        ],
+        "min_players": 2,
+        "max_players": 2,
+        "ratings": [4, 5]
+    },
+    {
+        "id": 3,
+        "name": "Диксит",
+        "categories": [
+            "Ассоциативная"
+        ],
+        "min_players": 3,
+        "max_players": 8,
+        "ratings": [4, 3]
+    }
+]

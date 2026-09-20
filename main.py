@@ -12,7 +12,7 @@ def get_game_info(
         f"Название: {name}\n"
         f"Категория: {category}\n"
         f"Количество игроков: от {minimum_players} до {maximum_players}\n"
-        f"Оценки: {ratings}"
+        f"Средняя оценка: {calculate_average_rating(ratings):.2f}"
     )
 
 
