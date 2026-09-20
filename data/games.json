@@ -31,5 +31,62 @@
         "min_players": 3,
         "max_players": 8,
         "ratings": [4, 3]
+    },
+    {
+        "id": 4,
+        "name": "Каркассон",
+        "categories": [
+            "Стратегическая",
+            "Семейная"
+        ],
+        "min_players": 2,
+        "max_players": 5,
+        "ratings": [5, 4]
+    },
+    {
+        "id": 5,
+        "name": "Азул",
+        "categories": [
+            "Абстрактная",
+            "Стратегическая",
+            "Семейная"
+        ],
+        "min_players": 2,
+        "max_players": 4,
+        "ratings": [5, 4]
+    },
+    {
+        "id": 6,
+        "name": "Кодовые имена",
+        "categories": [
+            "Командная",
+            "Словесная",
+            "Для компании"
+        ],
+        "min_players": 4,
+        "max_players": 8,
+        "ratings": [5, 5]
+    },
+    {
+        "id": 7,
+        "name": "Пандемия",
+        "categories": [
+            "Кооперативная",
+            "Стратегическая"
+        ],
+        "min_players": 2,
+        "max_players": 4,
+        "ratings": [5, 4]
+    },
+    {
+        "id": 8,
+        "name": "Билет на поезд: Европа",
+        "categories": [
+            "Стратегическая",
+            "Семейная"
+        ],
+        "min_players": 2,
+        "max_players": 5,
+        "ratings": [5, 5]
     }
 ]
