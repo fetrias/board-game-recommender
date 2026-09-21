@@ -1,4 +1,4 @@
-"""Console interface for the board game recommendation service."""
+"""Консольный интерфейс сервиса рекомендаций настольных игр."""
 
 from datetime import date
 from pathlib import Path
@@ -20,7 +20,7 @@ DATA_FILE = str(Path(__file__).parent / "data" / "games.json")
 
 
 def show_games(games: list[dict]) -> None:
-    """Display a short list of board games."""
+    """Вывести краткий список настольных игр."""
     if not games:
         print("Игры не найдены.")
         return
@@ -35,7 +35,7 @@ def show_games(games: list[dict]) -> None:
 
 
 def show_menu() -> None:
-    """Display the application menu."""
+    """Вывести меню приложения."""
     print("\n=== Сервис рекомендаций настольных игр ===")
     print("1. Показать все игры")
     print("2. Показать информацию об игре")
@@ -49,21 +49,21 @@ def show_menu() -> None:
 
 
 def show_game_details(games: list[dict]) -> None:
-    """Request a game and display detailed information about it."""
+    """Запросить игру и вывести подробную информацию о ней."""
     game = select_game(games)
     if game is not None:
         print("\n" + get_game_info(game))
 
 
 def search_and_show_games(games: list[dict]) -> None:
-    """Find games by name and display the results."""
+    """Найти игры по названию и вывести результаты поиска."""
     query = input("Введите название или его часть: ")
     found_games = find_games(games, query)
     show_games(found_games)
 
 
 def show_recommendations(games: list[dict]) -> None:
-    """Request recommendation parameters and display suitable games."""
+    """Запросить параметры рекомендации и вывести подходящие игры."""
     player_count = input_int(
         "Введите количество участников: ",
         minimum=1,
@@ -82,7 +82,7 @@ def show_recommendations(games: list[dict]) -> None:
 
 
 def add_game_rating(games: list[dict]) -> None:
-    """Add and save a rating for the selected game."""
+    """Добавить и сохранить оценку выбранной игры."""
     game = select_game(games)
     if game is None:
         return
@@ -99,7 +99,7 @@ def add_game_rating(games: list[dict]) -> None:
 
 
 def cancel_last_rating(games: list[dict]) -> None:
-    """Remove and save the last rating of the selected game."""
+    """Удалить и сохранить последнюю оценку выбранной игры."""
     game = select_game(games)
     if game is None:
         return
@@ -113,7 +113,7 @@ def cancel_last_rating(games: list[dict]) -> None:
 
 
 def show_rating_statistics(games: list[dict]) -> None:
-    """Display rating count and average for the selected game."""
+    """Вывести количество и среднее значение оценок выбранной игры."""
     game = select_game(games)
     if game is None:
         return
@@ -124,7 +124,7 @@ def show_rating_statistics(games: list[dict]) -> None:
 
 
 def main() -> None:
-    """Load project data and run the application menu."""
+    """Загрузить данные проекта и запустить меню приложения."""
     games = load_games(DATA_FILE)
     if not games:
         print("Нет данных для работы программы.")

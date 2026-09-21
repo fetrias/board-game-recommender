@@ -1,10 +1,10 @@
-"""Functions for selecting and recommending board games."""
+"""Функции для отбора и рекомендации настольных игр."""
 
 from games import sort_games_by_rating
 
 
 def is_player_count_suitable(game: dict, player_count: int) -> bool:
-    """Check whether a game supports the provided number of players."""
+    """Проверить, подходит ли игра для указанного числа участников."""
     return game["min_players"] <= player_count <= game["max_players"]
 
 
@@ -12,7 +12,7 @@ def filter_games_by_player_count(
     games: list[dict],
     player_count: int,
 ) -> list[dict]:
-    """Return games suitable for the provided number of players."""
+    """Вернуть игры для указанного числа участников."""
     return [
         game
         for game in games
@@ -24,7 +24,7 @@ def filter_games_by_category(
     games: list[dict],
     category: str,
 ) -> list[dict]:
-    """Return games belonging to the provided category."""
+    """Вернуть игры указанной категории."""
     normalized_category = category.strip().casefold()
     if not normalized_category:
         return list(games)
@@ -44,7 +44,7 @@ def recommend_games(
     player_count: int,
     category: str = "",
 ) -> list[dict]:
-    """Recommend suitable games sorted by average rating."""
+    """Рекомендовать подходящие игры по убыванию средней оценки."""
     suitable_games = filter_games_by_player_count(games, player_count)
     suitable_games = filter_games_by_category(suitable_games, category)
     return sort_games_by_rating(suitable_games)

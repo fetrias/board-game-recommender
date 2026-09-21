@@ -1,4 +1,4 @@
-"""Tests for board game recommendation functions."""
+"""Тесты функций рекомендации настольных игр."""
 
 from recommendations import (
     filter_games_by_player_count,
@@ -32,14 +32,14 @@ GAMES = [
 
 
 def test_filter_games_by_player_count() -> None:
-    """Only games supporting the player count are returned."""
+    """Возвращаются только игры для указанного числа участников."""
     result = filter_games_by_player_count(GAMES, 5)
 
     assert [game["name"] for game in result] == ["Каркассон"]
 
 
 def test_recommend_games_by_category() -> None:
-    """Recommendations match the category and are sorted by rating."""
+    """Рекомендации соответствуют категории и отсортированы по оценке."""
     result = recommend_games(GAMES, 4, "СЕМЕЙНАЯ")
 
     assert [game["name"] for game in result] == ["Азул", "Каркассон"]

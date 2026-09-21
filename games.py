@@ -1,15 +1,15 @@
-"""Functions for working with board games and ratings."""
+"""Функции для работы с настольными играми и оценками."""
 
 
 def calculate_average_rating(ratings: list[int]) -> float:
-    """Calculate the average value of the provided ratings."""
+    """Вычислить среднее значение переданных оценок."""
     if not ratings:
         return 0.0
     return sum(ratings) / len(ratings)
 
 
 def get_game_info(game: dict) -> str:
-    """Return formatted information about a board game."""
+    """Вернуть отформатированную информацию о настольной игре."""
     categories = ", ".join(game["categories"])
     average_rating = calculate_average_rating(game["ratings"])
 
@@ -23,7 +23,7 @@ def get_game_info(game: dict) -> str:
 
 
 def find_games(games: list[dict], query: str) -> list[dict]:
-    """Find games whose names contain the provided text."""
+    """Найти игры, названия которых содержат переданный текст."""
     normalized_query = query.strip().casefold()
     return [
         game
@@ -33,7 +33,7 @@ def find_games(games: list[dict], query: str) -> list[dict]:
 
 
 def sort_games_by_rating(games: list[dict]) -> list[dict]:
-    """Return games sorted by average rating in descending order."""
+    """Вернуть игры по убыванию средней оценки."""
     return sorted(
         games,
         key=lambda game: calculate_average_rating(game["ratings"]),
@@ -42,14 +42,14 @@ def sort_games_by_rating(games: list[dict]) -> list[dict]:
 
 
 def add_rating(game: dict, rating: int) -> None:
-    """Add a rating from 1 to 5 to a board game."""
+    """Добавить настольной игре оценку от 1 до 5."""
     if not 1 <= rating <= 5:
         raise ValueError("Оценка должна быть целым числом от 1 до 5.")
     game["ratings"].append(rating)
 
 
 def remove_last_rating(game: dict) -> bool:
-    """Remove the last rating if the game has any ratings."""
+    """Удалить последнюю оценку игры при наличии оценок."""
     if not game["ratings"]:
         return False
     game["ratings"].pop()
@@ -57,7 +57,7 @@ def remove_last_rating(game: dict) -> bool:
 
 
 def get_rating_statistics(game: dict) -> dict[str, int | float]:
-    """Return the number of ratings and their average value."""
+    """Вернуть количество оценок и их среднее значение."""
     ratings = game["ratings"]
     return {
         "count": len(ratings),

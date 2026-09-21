@@ -1,4 +1,4 @@
-"""Tests for board game and rating functions."""
+"""Тесты функций для работы с настольными играми и оценками."""
 
 import pytest
 
@@ -12,13 +12,13 @@ from games import (
 
 
 def test_calculate_average_rating() -> None:
-    """Average rating is calculated for filled and empty lists."""
+    """Средняя оценка вычисляется для заполненного и пустого списков."""
     assert calculate_average_rating([5, 4, 3]) == 4.0
     assert calculate_average_rating([]) == 0.0
 
 
 def test_find_games() -> None:
-    """Games are found by a case-insensitive part of their names."""
+    """Игры находятся по части названия без учёта регистра."""
     games = [
         {"name": "Палео"},
         {"name": "Пиксель Тактикс"},
@@ -31,7 +31,7 @@ def test_find_games() -> None:
 
 
 def test_rating_operations() -> None:
-    """A rating can be added, summarized, and removed."""
+    """Оценка добавляется, учитывается в статистике и удаляется."""
     game = {"ratings": [5, 4]}
 
     add_rating(game, 3)

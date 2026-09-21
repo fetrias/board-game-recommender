@@ -1,4 +1,4 @@
-"""Helper functions for safe user input."""
+"""Вспомогательные функции для безопасного пользовательского ввода."""
 
 
 def input_int(
@@ -6,7 +6,7 @@ def input_int(
     minimum: int | None = None,
     maximum: int | None = None,
 ) -> int:
-    """Request an integer until the user enters an allowed value."""
+    """Запрашивать целое число до получения допустимого значения."""
     while True:
         try:
             value = int(input(prompt))
@@ -25,12 +25,12 @@ def input_int(
 
 
 def input_rating() -> int:
-    """Request a board game rating from 1 to 5."""
+    """Запросить оценку настольной игры от 1 до 5."""
     return input_int("Введите оценку от 1 до 5: ", minimum=1, maximum=5)
 
 
 def select_game(games: list[dict]) -> dict | None:
-    """Request a game identifier and return the selected game."""
+    """Запросить идентификатор и вернуть выбранную игру."""
     if not games:
         print("Список игр пуст.")
         return None

@@ -1,10 +1,10 @@
-"""Functions for loading and saving project data."""
+"""Функции для загрузки и сохранения данных проекта."""
 
 import json
 
 
 def load_games(filename: str) -> list[dict]:
-    """Load a list of board games from a JSON file."""
+    """Загрузить список настольных игр из JSON-файла."""
     try:
         with open(filename, encoding="utf-8") as file:
             games = json.load(file)
@@ -23,7 +23,7 @@ def load_games(filename: str) -> list[dict]:
 
 
 def save_games(filename: str, games: list[dict]) -> bool:
-    """Save a list of board games to a JSON file."""
+    """Сохранить список настольных игр в JSON-файл."""
     try:
         with open(filename, "w", encoding="utf-8") as file:
             json.dump(games, file, ensure_ascii=False, indent=4)
